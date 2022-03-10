@@ -45,12 +45,12 @@ namespace ui {
         auto new_exp = fs::GetExplorerForPath(new_path);
         if(exp->IsDirectory(path)) {
             if(new_exp->IsDirectory(new_path)) {
-                const auto option = g_MainApplication->CreateShowDialog("Directory already exists", "...", { "Merge contents", "Replace contents", "Cancel" }, true);
+                const auto option = g_MainApplication->CreateShowDialog("Directory already exists", "...", { "Merge contents", "Replace contents", "Cancel" }, true)
                 if(option == 0) {
                     return;
                 }
                 else if(option != 1) {
-                      new_exp->DeleteDirectory(new_path);
+                    new_exp->DeleteDirectory(new_path);
                 }
             }
 
